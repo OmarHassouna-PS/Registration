@@ -1,6 +1,6 @@
 const form = document.getElementById("form");
 
-class Users {
+class User {
 
  constructor (userName, password, email, phone) {
     this.userName = userName;
@@ -58,7 +58,7 @@ form.addEventListener("submit", (event) => {
     if (sessionStorage.arrUsers != null) 
         arrUsers = JSON.parse(sessionStorage.arrUsers);
 
-    let newUser = new Users (
+    let newUser = new User (
         event.target.userName.value,
         event.target.password.value,
         event.target.email.value,
@@ -68,7 +68,6 @@ form.addEventListener("submit", (event) => {
     event.preventDefault(newUser);
 
     if (inputsRules(newUser) && usernameVerification (arrUsers, newUser)) {
-        console.log("aaaaaa")
         arrUsers.push(newUser);
         sessionStorage.setItem('arrUsers', JSON.stringify(arrUsers));
         form.reset();
