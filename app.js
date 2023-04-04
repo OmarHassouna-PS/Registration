@@ -1,7 +1,5 @@
 const form = document.getElementById("form");
 
-
-
 class Users {
 
  constructor (userName, password, email, phone) {
@@ -53,12 +51,6 @@ function usernameVerification (arrUsers, newUser) {
     return true;
 }
 
-// function Check (arrUsers, newUser) {
-
-
-//     return ()
-// }
-
 form.addEventListener("submit", (event) => {
 
     let arrUsers = [];
@@ -81,5 +73,4 @@ form.addEventListener("submit", (event) => {
         sessionStorage.setItem('arrUsers', JSON.stringify(arrUsers));
         form.reset();
     }
-    // console.log(Check(arrUsers, newUser));
 });
